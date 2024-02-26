@@ -9,7 +9,7 @@ export default function Form() {
     return <h1>That's right!</h1>;
   }
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('submitting');
     try {
@@ -23,7 +23,7 @@ export default function Form() {
     }
   }
 
-  function handleTextareaChange(e: ChangeEvent<HTMLTextAreaElement>) {
+  const handleTextareaChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setAnswer(e.target.value);
   }
 
@@ -53,7 +53,7 @@ export default function Form() {
   );
 }
 
-function submitForm(answer: string) {
+const submitForm = (answer: string) => {
   // Pretend it's hitting the network.
   return new Promise<void>((resolve, reject) => {
     setTimeout(() => {
