@@ -1,12 +1,12 @@
 import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import App from '../App';
+import Form from '../components/form';
 
 describe('Form page', () => {
   test('Validate input', async () => {
     const user = userEvent.setup();
-    render(<App />);
+    render(<Form />);
     expect(screen.getByRole('heading')).toHaveTextContent('City quiz');
 
     const cityField = screen.getByPlaceholderText('Enter city name');
@@ -31,7 +31,7 @@ describe('Form page', () => {
 
   test('Submit successfully', async () => {
     const user = userEvent.setup();
-    render(<App />);
+    render(<Form />);
 
     const cityField = screen.getByPlaceholderText('Enter city name');
     await user.type(cityField, 'lima');
