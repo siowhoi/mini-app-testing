@@ -1,8 +1,7 @@
 import './App.css';
-//import Form from './Form';
-import NameInput from './components/name-input';
+import StackNumber from './components/stack-number';
 function App() {
-  return <NameInput />;
+  return <StackNumber />;
 }
 
 export default App;
